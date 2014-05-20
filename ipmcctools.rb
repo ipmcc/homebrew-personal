@@ -10,6 +10,7 @@ class Ipmcctools < Formula
     (bin+"toggleXcode").chmod 0755
     bin.install "fpo"
     (bin+"fpo").chmod 0755
+    bin.install "git-accidentally-all-the-submodules"
+    (bin+"git-accidentally-all-the-submodules").chmod 0755
   end
-
 end
