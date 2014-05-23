@@ -5,12 +5,10 @@ class Ipmcctools < Formula
   head "https://github.com/ipmcc/tools", :using => :git
   sha1 ""
 
-  def install
-    bin.install "toggleXcode"
-    (bin+"toggleXcode").chmod 0755
-    bin.install "fpo"
-    (bin+"fpo").chmod 0755
-    bin.install "git-accidentally-all-the-submodules"
-    (bin+"git-accidentally-all-the-submodules").chmod 0755
+  def install	
+    Dir.open(Dir.pwd).each do |filename|
+      next if not File.executable? filename
+      bin.install filename
+	end
   end
 end
